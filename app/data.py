@@ -1,0 +1,42 @@
+books = [
+    {
+        'bsn': '002057948',
+        'author': 'Newberry, Percy E. (Percy Edward), 1869-1949.',
+        'title': 'El Bersheh / ',
+        'imprint': 'London ; Boston : Egypt Exploration Fund, [1893-1894?]',
+        'collection': 'May',
+        'featured': 1,
+    },
+    {
+        'bsn': '003059255',
+        'author': 'Leibovitch, J.',
+        'title': 'Les inscriptions protosinaïtiques /	 ',
+        'imprint': 'Le Caire : Impr. de l\'Institut français d\'archéologie orientale, 1934.',
+        'collection': 'May',
+        'featured': 1,
+    },
+    {
+        'bsn': '003059273',
+        'author': 'Potts, Timothy F.',
+        'title': 'Civilization : ',
+        'imprint': '[Canberra] : Australian National Gallery, c1990.',
+        'collection': 'May',
+        'featured': 0,
+    },
+    {
+        'bsn': '003788855',
+        'author': 'Talovich, G. B., author.',
+        'title': 'Zhou wen kao /',
+        'imprint': '',
+        'collection': 'Keightley',
+        'featured': 1,
+    },
+    {
+        'bsn': '002451749',
+        'author': 'Mellink, Machteld J. (Machteld Johanna)',
+        'title': 'A Hittite cemetery at Gordion /	 ',
+        'imprint': 'Philadelphia : University Museum, University of Pennsylvania, 1956.',
+        'collection': 'Vermeule',
+        'featured': 1,
+    },
+]

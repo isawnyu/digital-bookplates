@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        {% for collection in collections %}
+            <h3>{{ collection|title }} Collection | Complete List</h3>
+            {% for book in books %}
+              <p>{{ book.author}} {{ book.title }} {{book.imprint}} <a href="{{ 'http://bobcat.library.nyu.edu/primo-explore/fulldisplay?docid=nyu_aleph%s&context=L&vid=NYU&lang=en_US&sortby=rank&offset=0' % book.bsn }}"" target="_blank">link</a></p>
+            {% endfor %}
+            <!-- <div style="padding-top: 10px;">
+            <p> Click <a href="#" target="_blank">here</a> to view all of the books in ISAW's {{ collection|title }} Collection.
+            </div> -->
+          </div>
+        {% endfor %}
+
+{% endblock %}
