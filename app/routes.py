@@ -9,7 +9,8 @@ collections = sorted(list(set([book['collection'.lower()] for book in books])))
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', title='Main', collections=collections, books=books, image_loc=image_loc)
+    # return render_template('index.html', title='Main', collections=collections, books=books, image_loc=image_loc)
+    return render_template('index.html', title='Main', collections=collections)
 
 @app.route('/<collection>')
 def book_collections(collection):
