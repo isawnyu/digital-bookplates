@@ -14,11 +14,11 @@
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
         </div>
           <div>
-            <h3>{{ collection|title }} Collection Books</h3>
+            <h3>Featured {{ collection|title }} Collection Books</h3>
             {% for book in books %}
 
               {% if book.featured == 1 %}
-              <p>{{ book.author}} {{ book.title }} {{book.imprint}} <a href="{{ 'http://bobcat.library.nyu.edu/primo-explore/fulldisplay?docid=nyu_aleph%s&context=L&vid=NYU&lang=en_US&sortby=rank&offset=0' % book.bsn }}"" target="_blank">link</a></p>
+              {% if book.author %}{{ book.author}} {% endif %}{{ book.title }} {{book.imprint}} <a href="{{ 'http://bobcat.library.nyu.edu/primo-explore/fulldisplay?docid=nyu_aleph%s&context=L&vid=NYU&&search_scope=all&tab=all&lang=en_US' % book.bsn }}"" target="_blank">link</a></p>
               {% endif %}
 
             {% endfor %}

@@ -9,8 +9,6 @@ import pickle
 
 import os
 
-print(os.getcwd())
-
 books = pickle.load(open('app/static/data/dbp_data.p', 'rb'))
 images_ = [file.split('.')[0] for file in os.listdir('app/static/img') if file.endswith('.png')]
 
@@ -31,7 +29,6 @@ for name in collection_names:
 @app.route('/')
 @app.route('/index')
 def index():
-    # return render_template('index.html', title='Main', collections=collections, books=books, image_loc=image_loc)
     return render_template('index.html', title='Main', collections=collections)
 
 
@@ -44,8 +41,8 @@ def book_collections(collection):
         image_loc = None
     return render_template('collection.html', title='Main', collections=[collection], books=collection_books, image_loc=image_loc)
 
+
 @app.route('/full/<collection>')
 def book_collections_full(collection):
     collection_books = [book for book in books if book['collection'].lower()==collection.lower()]
-    print(type(collection_books[0]['author']))
     return render_template('collection_full.html', title='Main', collections=[collection], books=collection_books)
