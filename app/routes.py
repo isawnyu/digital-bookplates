@@ -2,10 +2,31 @@ from flask import render_template, url_for
 import os.path
 
 from app import app
-from .data import books
+# from .data import books
 
-collections = sorted(list(set([book['collection'.lower()] for book in books])))
+import pickle
 
+
+import os
+
+print(os.getcwd())
+
+books = pickle.load(open('app/static/data/dbp_data.p', 'rb'))
+images_ = [file.split('.')[0] for file in os.listdir('app/static/img') if file.endswith('.png')]
+collection_names = sorted(list(set([book['collection'.lower()] for book in books])))
+
+collections = []
+
+for name in collection_names:
+    collection = dict()
+    collection['name'] = name
+    if name in images_:
+        collection['image'] = 'img/'+collection+'.png'
+    else:
+        collection['image'] = 'img/generic.png'
+    collections.append(collection)
+
+    
 @app.route('/')
 @app.route('/index')
 def index():
