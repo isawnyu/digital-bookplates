@@ -7,6 +7,8 @@ name = "pypi"
 flask = "*"
 python-dotenv = "*"
 flask-bootstrap = "*"
+pandas = "*"
+jupyter = "*"
 
 [dev-packages]
 
