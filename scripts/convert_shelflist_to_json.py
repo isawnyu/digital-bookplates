@@ -18,10 +18,10 @@ df = df[['BSN','Z13_AUTHOR', 'Z13_TITLE', 'Z13_IMPRINT', 'Z30_NOTE_INTERNAL']]
 
 # Rename columns
 
-df = df.rename(columns={'BSN': 'bsn', 
-                        'Z13_AUTHOR': 'author', 
-                        'Z13_TITLE': 'title', 
-                        'Z13_IMPRINT': 'imprint', 
+df = df.rename(columns={'BSN': 'bsn',
+                        'Z13_AUTHOR': 'author',
+                        'Z13_TITLE': 'title',
+                        'Z13_IMPRINT': 'imprint',
                         'Z30_NOTE_INTERNAL': 'collection'
                        }
               )
@@ -34,14 +34,14 @@ df = df.dropna(subset=['collection'])
 
 def clean_collection(string):
     cleaned = string
-    
+
     # Remove punctuation with translate
     punctuation ="\"#$%&\'()+,-/:;<=>@[\]^_`{|}~.?!«»—"
     translator = str.maketrans({key: " " for key in punctuation})
     cleaned = cleaned.translate(translator)
-    
+
     cleaned = cleaned.replace('Collection', '')
-    
+
     return cleaned.strip()
 
 # Clean collection column
