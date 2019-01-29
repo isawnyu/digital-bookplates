@@ -9,6 +9,7 @@ python-dotenv = "*"
 flask-bootstrap = "*"
 pandas = "*"
 jupyter = "*"
+gunicorn = "*"
 
 [dev-packages]
 
