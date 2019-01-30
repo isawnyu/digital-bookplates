@@ -20,7 +20,7 @@ for name in collection_names:
     collection = dict()
     collection['name'] = name
     if name.lower() in images_:
-        collection['image'] = 'img/'+name+'.png'
+        collection['image'] = 'img/'+name.lower()+'.png'
     else:
         collection['image'] = 'img/generic.png'
     collections.append(collection)
