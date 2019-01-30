@@ -3,8 +3,8 @@
 {% block content %}
   {% for collection in collections %}
     <p style="text-align: center; padding: 10px; display: inline-block;">
-      <a href="#">
-        <img src="{{ url_for('static', filename=collection.image)}}" height="250" style="display: block; margin-left: auto; margin-right: auto;">
+      <a href="{{ url_for('book_collections', collection=collection.name)}}">
+        <img src="{{ url_for('static', filename=collection.image)}}" width="250" hstyle="display: block; margin-left: auto; margin-right: auto;">
       </a>
       <br>
       <a href="{{ url_for('book_collections', collection=collection.name)}}">
