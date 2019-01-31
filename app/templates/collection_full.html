@@ -14,7 +14,7 @@
             {% endfor %}
             </ul>
             <div style="padding-top: 10px;">
-            <p> There are {{books|length}} titles in the
+            <p id='total'> There are {{books|length}} titles in the
               <a href="{{ url_for('book_collections', collection=collection)}}">
                 {{ collection|title }}
               </a>  Collection.
@@ -24,8 +24,15 @@
           <script>
           function myFunction() {
             // Declare variables
+
+            var orig_count = document.getElementById("total").innerHTML
+
             var input, filter, ul, li, a, i, txtValue;
             input = document.getElementById('myInput');
+
+            if (input.value.length == 0)
+                document.getElementById("total").innerHTML = orig_count;
+
             filter = input.value.toUpperCase();
             ul = document.getElementById("myUL");
             li = ul.getElementsByTagName('li');
@@ -39,6 +46,20 @@
                   li[i].style.display = "none";
                 }
             }
+
+          // items = document.getElementsByTagName("li").length;
+          // console.log(items);
+
+          var elem = document.querySelectorAll('li');
+          var visible = [];
+          for (i = 0; i < elem.length; i++) {
+            _this = elem[i];
+            if (_this.style.display !== "none")
+              visible.push(elem[i]);
+          }
+
+          document.getElementById("total").innerHTML = "There are "+ visible.length + " matches in this filtered collection.";
+
           }
           </script>
 
