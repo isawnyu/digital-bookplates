@@ -115,3 +115,6 @@ dmypy.json
 
 # Shelflist data
 app/static/data/shelflist.csv
+
+# PyCharm
+.idea/

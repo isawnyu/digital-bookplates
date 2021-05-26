@@ -8,10 +8,10 @@ flask = "*"
 python-dotenv = "*"
 flask-bootstrap = "*"
 pandas = "*"
-jupyter = "*"
 gunicorn = "*"
 
 [dev-packages]
+jupyter = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.9"
