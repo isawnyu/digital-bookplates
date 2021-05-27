@@ -110,7 +110,7 @@ toml==0.10.2
 tornado==6.1
 tqdm==4.57.0
 traitlets==5.0.5
-urllib3==1.26.2
+urllib3==1.26.4
 virtualenv==20.1.0
 virtualenv-clone==0.5.4
 virtualenvwrapper==4.8.4
